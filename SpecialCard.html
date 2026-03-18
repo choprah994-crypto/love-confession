@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Special Cards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="StyleCSS/style4.css" />
+</head>
+<body>
+  <div class="outer-container">
+    <div class="card-container">
+      <div class="card-header">
+        <h1 class="card-title">Special Cards</h1>
+        <div class="card-header-bar"></div>
+        <div class="card-meta-row">
+          <span><span>FROM:</span> Me</span>
+          <span><span>TO:</span> My Love</span>
+        </div>
+      </div>
+      <div class="card-image-section">
+        <div class="carousel-image-wrapper">
+          <!-- Decor icon left-top -->
+          <span class="icon-corner left-top">
+            <!-- heart outline SVG -->
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M13 2.1c4.6 3.4 5.9 10.2 3.1 14.8-2.1 3.4-6.2 5.1-10.2 4.3-.4-2.4.4-4.8 2.2-6.5C10 13 11.4 12.1 13 11.1"
+              ></path>
+              <path d="M13 11.1c-3.1-2.9-4.3-7.5-2.2-10.8"></path>
+              <path d="m14.5 12.5 6 6"></path>
+              <path d="m18 16 2.5 2.5"></path>
+            </svg>
+          </span>
+          <!-- Carousel images -->
+          <img
+            src="images/pic1-CzYwUIkT.jpg"
+            alt="Photo 1"
+            class="carousel-image active"
+            id="image0"
+          />
+          <img
+            src="images/pic2-DDdxw6b7.gif"
+            alt="Photo 2"
+            class="carousel-image"
+            id="image1"
+          />
+          <img
+            src="images/pic3-BzPg4yUa.jpg"
+            alt="Photo 3"
+            class="carousel-image"
+            id="image2"
+          />
+          <!-- Caption (will be updated by JS) -->
+          <div class="carousel-caption" id="carousel-caption">
+            Some Flowers For You
+          </div>
+          <!-- Decor icon right-bottom -->
+          <span class="icon-corner right-bottom">
+            <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12.003 21.352c-.347-.19-8.32-4.88-8.32-11.446 0-3.08 2.498-5.578 5.578-5.578 1.83
+              0 3.538.88 4.618 2.26a4.954 4.954 0 0 1 4.618-2.26c3.08 0 5.578 2.498 5.578 5.578 0 6.565-7.972 11.255-8.32
+              11.446a.998.998 0 0 1-1.092 0z"
+              />
+            </svg>
+          </span>
+          <!-- Carousel arrows -->
+          <button class="carousel-arrow left" onclick="prevImage()">&lt;</button>
+          <button class="carousel-arrow right" onclick="nextImage()">&gt;</button>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="card-date"><span>DATE:</span> Now</div>
+          <div class="card-valid"><span>VALID FOR:</span> Forever</div>
+        </div>
+        <div class="footer-note">with love, Your Madam Ji 💌</div>
+      </div>
+    </div>
+    <button class="nav-button" id="btnBack">&larr; Back</button>
+    <button class="nav-button next" id="btnNext">Next &rarr;</button>
+  </div>
+  <script src="JavaScript/script4.js" defer></script>
+</body>
+</html>

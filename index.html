@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>This is For You — Fill Heart</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="StyleCSS/style2.css">
+</head>
+<body>
+  <div class="page-heading">Fill the heart to continue</div>
+  <div class="container">
+    <div class="card">
+      <div class="grid" id="heartGrid">
+        <!-- Row 1 -->
+        <div class="box cross" disabled="true">💗</div>
+        <div class="box cross" disabled="true">✗</div>
+        <div class="box filled" disabled="true">✗</div>
+        <!-- Row 2 -->
+        <div class="box cross" disabled="true">✗</div>
+        <div class="box" data-center="true"></div>
+        <div class="box cross" disabled="true">✗</div>
+        <!-- Row 3 -->
+        <div class="box filled" disabled="true">✗</div>
+        <div class="box cross" disabled="true">✗</div>
+        <div class="box cross" disabled="true">💗</div>
+      </div>
+      <div class="popup" id="popupMessage">💗 You won my heart 💗</div>
+    </div>
+    <button class="nav-btn back" id="backBtn">&larr; Back</button>
+    <button class="nav-btn next" id="nextBtn">Next &rarr;</button>
+  </div>
+  <script src="JavaScript/script2.js" defer></script>
+</body>
+</html>

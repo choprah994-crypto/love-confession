@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine? ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #ffc5d9 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating hearts background animation */
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .heart-bg {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.3);
+            animation: float 8s infinite;
+            pointer-events: none;
+        }
+
+        .heart-bg:nth-child(1) { left: 10%; animation-delay: 0s; font-size: 25px; }
+        .heart-bg:nth-child(2) { left: 20%; animation-delay: 1s; font-size: 15px; }
+        .heart-bg:nth-child(3) { left: 30%; animation-delay: 2s; font-size: 30px; }
+        .heart-bg:nth-child(4) { left: 40%; animation-delay: 3s; font-size: 20px; }
+        .heart-bg:nth-child(5) { left: 50%; animation-delay: 4s; font-size: 25px; }
+        .heart-bg:nth-child(6) { left: 60%; animation-delay: 5s; font-size: 15px; }
+        .heart-bg:nth-child(7) { left: 70%; animation-delay: 6s; font-size: 30px; }
+        .heart-bg:nth-child(8) { left: 80%; animation-delay: 7s; font-size: 20px; }
+        .heart-bg:nth-child(9) { left: 90%; animation-delay: 8s; font-size: 25px; }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 80px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .question {
+            font-size: 48px;
+            color: #c44569;
+            margin-bottom: 40px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(196, 69, 105, 0.2);
+            letter-spacing: 2px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            min-height: 60px;
+            position: relative;
+        }
+
+        .btn {
+            padding: 15px 50px;
+            font-size: 24px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-family: 'Georgia', serif;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #ff0066, #ff69b4);
+            color: white;
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 0, 102, 0.4);
+        }
+
+        .btn-no {
+            background: linear-gradient(135deg, #ffc5d9, #ff6b9d);
+            color: #c44569;
+            transition: all 0.2s ease;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffc5d9, #ff6b9d);
+            padding: 60px;
+            border-radius: 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: modalAppear 0.5s ease;
+        }
+
+        @keyframes modalAppear {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-message {
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.5;
+        }
+
+        /* Celebration hearts */
+        @keyframes celebrate {
+            0% {
+                transform: translateY(0) scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-500px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .celebration-heart {
+            position: fixed;
+            font-size: 40px;
+            animation: celebrate 2s ease-out;
+            pointer-events: none;
+            z-index: 2000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+                margin: 20px;
+            }
+
+            .question {
+                font-size: 32px;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 18px;
+            }
+
+            .modal-message {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="heart-bg">❤️</div>
+    <div class="heart-bg">💕</div>
+    <div class="heart-bg">💖</div>
+    <div class="heart-bg">❤️</div>
+    <div class="heart-bg">💕</div>
+    <div class="heart-bg">💖</div>
+    <div class="heart-bg">❤️</div>
+    <div class="heart-bg">💕</div>
+    <div class="heart-bg">💖</div>
+
+    <div class="container" id="mainContainer">
+        <div class="question" id="question">Will you be mine? 💝</div>
+        <div class="buttons" id="buttonsContainer">
+            <button class="btn btn-yes" id="yesBtn">Yes ❤️</button>
+            <button class="btn btn-no" id="noBtn">No</button>
+        </div>
+        <button id="backBtn" style="margin-top:30px; background:none; border:none; color:#c44569; font-size:16px; cursor:pointer; font-family:'Georgia',serif;">← Back</button>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-message">Thank you so much!<br>I know you love me too ❤️</div>
+        </div>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const modal = document.getElementById('modal');
+        const buttonsContainer = document.getElementById('buttonsContainer');
+
+        // Function to create celebration hearts
+        function createCelebrationHearts() {
+            const hearts = ['❤️', '💕', '💖', '💗', '💝', '💓'];
+            const colors = ['#ff0066', '#ff69b4', '#ff6b9d', '#ffc5d9'];
+            
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'celebration-heart';
+                    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.left = Math.random() * window.innerWidth + 'px';
+                    heart.style.top = window.innerHeight + 'px';
+                    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => heart.remove(), 2000);
+                }, i * 100);
+            }
+        }
+
+        // Yes button click handler
+        yesBtn.addEventListener('click', function() {
+            createCelebrationHearts();
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 300);
+            // Navigate to Sorry.html after celebration
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.7s ease';
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                    window.location.href = 'ThisIsForYou.html';
+                }, 700);
+            }, 2800);
+        });
+
+        // No button dodge functionality
+        function moveButton() {
+            const container = buttonsContainer.getBoundingClientRect();
+            const button = noBtn.getBoundingClientRect();
+            
+            // Calculate random position within reasonable bounds
+            const maxX = window.innerWidth - button.width - 40;
+            const maxY = window.innerHeight - button.height - 40;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+
+        // Detect when mouse gets near the No button
+        document.addEventListener('mousemove', function(e) {
+            const button = noBtn.getBoundingClientRect();
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            // Define detection radius (distance from button)
+            const detectionRadius = 100;
+            
+            // Calculate distance from mouse to button center
+            const buttonCenterX = button.left + button.width / 2;
+            const buttonCenterY = button.top + button.height / 2;
+            
+            const distance = Math.sqrt(
+                Math.pow(mouseX - buttonCenterX, 2) + 
+                Math.pow(mouseY - buttonCenterY, 2)
+            );
+            
+            // If mouse is within detection radius, move the button
+            if (distance < detectionRadius) {
+                moveButton();
+            }
+        });
+
+        // Also move on hover as backup
+        noBtn.addEventListener('mouseenter', moveButton);
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+
+        // Back button
+        document.getElementById('backBtn').addEventListener('click', function() {
+            document.body.style.transition = 'opacity 0.7s ease';
+            document.body.style.opacity = 0;
+            setTimeout(() => { window.location.href = 'FillHeart.html'; }, 700);
+        });
+    </script>
+</body>
+</html>

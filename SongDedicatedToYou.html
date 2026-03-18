@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Songs Dedicated To You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Playfair+Display:wght@400;700&family=Indie+Flower&display=swap"
+    rel="stylesheet"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="StyleCSS/style5.css" />
+</head>
+<body>
+  <div class="center-container">
+    <div class="music-card">
+      <h1 class="music-title">
+        Songs Dedicated To You <span class="heart">💗</span>
+      </h1>
+      <div class="avatar-shell">
+        <img src="images/music1-CfXgOANl.gif" alt="Dil Cheez Tujhe Dedi" draggable="false" />
+        <!-- Use your own image source if needed -->
+      </div>
+      <div class="info-panel">
+        <div class="status-text" id="song-status">
+          <span id="status-text-value">PAUSED</span>
+        </div>
+        <h2 class="song-title">Dil Cheez Tujhe Dedi</h2>
+      </div>
+      <div class="music-slider-section">
+        <div class="slider-labels">
+          <span id="current-time">0:00</span>
+          <span id="duration-time">0:17</span>
+        </div>
+        <div class="slider-row">
+          <input
+            type="range"
+            min="0"
+            max="17"
+            value="0"
+            class="music-range-slider"
+            id="seek-slider"
+          />
+        </div>
+      </div>
+      <div class="controls-bar">
+        <button class="control-btn" title="Previous" id="prev-btn">&#9198;</button>
+        <button class="control-btn play" title="Play/Pause" id="play-btn">&#9654;</button>
+        <button class="control-btn" title="Next" id="next-btn">&#9197;</button>
+      </div>
+      <audio preload="metadata" id="audio-player">
+        <source src="song/music1-Bpgt1BZ5.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+    <button class="nav-btn back" id="backBtn">&#8592; Back</button>
+    <button class="nav-btn next" id="nextBtn">Next &#8594;</button>
+  </div>
+  <script src="JavaScript/script5.js" defer></script>
+</body>
+</html>
