@@ -1,0 +1,175 @@
+html, body { height: 100%; }
+    body {
+      background: #fbf5f4;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      color: #2c2c2c;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: opacity 0.7s;
+      opacity: 1;
+    }
+    body.fadeout {
+      opacity: 0;
+      transition: opacity 0.7s;
+    }
+    .page-heading {
+      font-family: 'Playfair Display', serif;
+      color: #d84b5a;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 42px;
+      margin-bottom: 0;
+      line-height: 1.15;
+      letter-spacing: .01em;
+    }
+    .container {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 10vh;
+      background: #fbf5f4;
+      position: relative;
+    }
+    .card {
+      background: #f7efe9;
+      border: 1.5px solid #e6dfda;
+      box-shadow: 0 10px 50px #e6dfda30;
+      border-radius: 50px;
+      max-width: 1040px;
+      min-height: 540px;
+      width: 90vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 0 48px 0;
+      margin-top: 18px;
+      position: relative;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      width: 94%;
+      justify-content: center;
+      align-items: center;
+      padding: 0 30px;
+      margin-bottom: 20px;
+      margin-top: 12px;
+    }
+    .box {
+      width: 112px;
+      height: 112px;
+      min-width: 90px;
+      min-height: 90px;
+      border: 2.5px solid #d84b5a;
+      background: #fffaf8;
+      box-shadow: 0 2px 16px #d84b5a0c;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.75rem;
+      color: #d84b5a;
+      cursor: pointer;
+      transition: background .2s, box-shadow .2s;
+      user-select: none;
+      position: relative;
+      z-index: 2;
+    }
+    .box[disabled="true"] {
+      cursor: default;
+      pointer-events: none;
+      opacity: 0.75;
+    }
+    .box.filled {
+      background: #ffd6ea;
+      box-shadow: 0 8px 26px #d84b5a24;
+      color: #d84b5a;
+      cursor: default;
+    }
+    .box.cross {
+      color: #d84b5a;
+      background: #fffaf8;
+      font-size: 2.5rem;
+      cursor: default;
+      pointer-events: none;
+      opacity: 0.67;
+    }
+    .popup {
+      position: absolute;
+      left: 50%;
+      top: 53%;
+      transform: translate(-50%, -50%);
+      background: #fff0f7;
+      color: #d84b5a;
+      font-size: 2.1rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      border-radius: 2rem;
+      padding: 28px 62px;
+      box-shadow: 0 8px 32px #c1adad34;
+      z-index: 20;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .popup.active {
+      opacity: 1;
+      pointer-events: auto;
+      animation: popheart 1s ease;
+    }
+    @keyframes popheart {
+      0% { opacity: 0; transform: translate(-50%, -60%) scale(0.7);}
+      50% { opacity: 1; transform: translate(-50%, -47%) scale(1.08);}
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1);}
+    }
+    /* Nav buttons */
+    .nav-btn {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      border-radius: 999px;
+      padding: 17px 45px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 12px #c1adad33;
+      color: #333;
+      position: fixed;
+      z-index: 40;
+      transition: background 0.2s;
+    }
+    .nav-btn.back {
+      left: 32px;
+      bottom: 32px;
+      background: #9ec1e6;
+    }
+    .nav-btn.back:hover {
+      background: #7fa8ce;
+    }
+    .nav-btn.next {
+      left: 50%;
+      bottom: 24px;
+      right: unset;
+      top: unset;
+      transform: translateX(-50%);
+      background: #f7d9e6;
+    }
+    .nav-btn.next:hover {
+      background: #f7b5cf;
+    }
+    @media (max-width: 900px){
+      .card { max-width: 99vw; min-height: 334px; padding: 30px 0 22px 0;}
+      .grid { gap: 2px;}
+      .box { width: 64px; height: 64px; font-size: 1.58rem;}
+      .popup { font-size: 1.08rem; padding: 11px 18px;}
+      .nav-btn.back { left: 6px; bottom: 8px; padding: 10px 22px;}
+      .nav-btn.next { left: 50%; bottom: 10px; padding: 10px 22px;}
+    }

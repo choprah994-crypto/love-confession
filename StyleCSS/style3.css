@@ -1,0 +1,158 @@
+body {
+      margin: 0;
+      background: #FBF5F4;
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+      transition: opacity 0.7s ease;
+      opacity: 1;
+    }
+    body.fadeout {
+      opacity: 0;
+    }
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: radial-gradient(circle at top left, #fff8f8 0%, #fbe9e9 100%);
+      opacity: 0.98;
+    }
+    .overflow-group {
+      position: relative;
+      max-width: 1300px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .letter-card {
+      position: relative;
+      background: rgba(255,255,255,0.96);
+      border-radius: 2.5rem;
+      box-shadow: 0 12px 40px rgba(193,173,173,0.18);
+      border: 2.5px solid #f1dede;
+      padding: 4.5rem 8rem 4.5rem 8rem;
+      text-align: center;
+      max-width: 1050px;
+      width: 100%;
+      font-size: 1.6rem;
+      z-index: 2;
+      overflow: visible;
+    }
+    .top-img {
+      position: absolute;
+      top: -70px;
+      right: -110px;
+      width: 220px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .stamp-svg {
+      position: absolute;
+      bottom: -90px;
+      left: -110px;
+      width: 265px;
+      height: 265px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.23em;
+      color: #4d4d4d;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-size: 4rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      color: #F7B5CF;
+      margin: 28px 0 0 0;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+    h3 {
+      font-size: 2.7rem;
+      font-family: 'Playfair Display', serif;
+      color: #F7B5CF;
+      font-style: italic;
+      margin: 2.2rem 0 0;
+      font-weight: 700;
+    }
+    .letter-text {
+      color: #414141;
+      margin: 2.9rem 0 2.4rem 0;
+      font-size: 2rem;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+    h4 {
+      font-size: 2.1rem;
+      font-family: 'Playfair Display', serif;
+      color: #1f1f1f;
+      font-style: italic;
+      font-weight: 800;
+      margin: 0 0 2.5rem 0;
+    }
+    .button-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1050px;
+      width: 100%;
+      padding: 0 8rem;
+      margin-top: 2.8rem;
+      z-index: 2;
+    }
+    .button {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      padding: 1.3rem 5rem;
+      border-radius: 2.8rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+      transition: background 0.2s;
+    }
+    .button-back {
+      background: #9EC1E6; color: #333;
+    }
+    .button-back:hover {
+      background: #7fa8ce;
+    }
+    .button-next {
+      background: #F7D9E6; color: #333;
+    }
+    .button-next:hover {
+      background: #F7B5CF;
+    }
+    @media (max-width: 900px) {
+      .overflow-group {
+        max-width: 98vw;
+      }
+      .letter-card {
+        max-width: 97vw;
+        padding: 2.2rem 2vw;
+      }
+      .button-row {
+        max-width: 97vw;
+        padding: 0 2vw;
+      }
+      .top-img {
+        width: 130px;
+        right: -45px;
+      }
+      .stamp-svg {
+        width: 150px;
+        height: 150px;
+        left: -45px;
+      }
+    }

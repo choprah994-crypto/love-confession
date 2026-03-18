@@ -1,0 +1,239 @@
+    body {
+      background: #fbf5f4;
+      min-height: 100vh;
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      color: #2c2c2c;
+      transition: opacity 0.7s ease;
+      opacity: 1;
+    }
+    body.fadeout {
+      opacity: 0;
+    }
+    .outer-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-container {
+      background: rgba(255, 255, 255, 0.85);
+      border: 2.5px solid #e7d8d2;
+      border-radius: 32px;
+      box-shadow: 0 16px 60px rgba(193, 173, 173, 0.23);
+      max-width: 990px;
+      width: 100%;
+      margin: 48px auto 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+    }
+    .card-header {
+      padding: 46px 64px 0;
+      text-align: center;
+    }
+    .card-title {
+      font-family: "Playfair Display", serif;
+      color: #d84b5a;
+      font-weight: 700;
+      font-size: 3.6rem;
+      margin-bottom: 10px;
+    }
+    .card-header-bar {
+      border-top: 2px solid #22222220;
+      border-bottom: 2px solid #22222220;
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+    .card-meta-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: "Cormorant Garamond", serif;
+      color: #444;
+      font-size: 1.07rem;
+      margin-top: 18px;
+      margin-bottom: 16px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .card-meta-row span {
+      font-weight: 700;
+    }
+    .card-image-section {
+      background: #faf4f3;
+      margin: 22px 38px 0;
+      border: 2px solid #2c2c2c30;
+      border-radius: 28px;
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .carousel-image-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .carousel-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 2px 18px #d84b5a1f;
+      border: 1px solid #d84b5a1f;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.35s;
+      z-index: 2;
+    }
+    .carousel-image.active {
+      opacity: 1;
+      z-index: 3;
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 24px;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      font-family: "Dancing Script", cursive;
+      color: #d84b5a;
+      font-style: italic;
+      text-shadow: 0 1px 10px #fff7f7;
+      opacity: 1;
+      pointer-events: none;
+      z-index: 12;
+    }
+    .icon-corner {
+      position: absolute;
+      opacity: 0.5;
+      z-index: 10;
+    }
+    .icon-corner.left-top {
+      left: 24px;
+      top: 24px;
+      opacity: 0.32;
+    }
+    .icon-corner.right-bottom {
+      right: 26px;
+      bottom: 24px;
+    }
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff5f4cc;
+      border: 1.5px solid #d84b5a80;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: #d84b5a;
+      cursor: pointer;
+      z-index: 20;
+      box-shadow: 0 1px 8px #d84b5a15;
+      backdrop-filter: blur(8px);
+      transition: background 0.2s, color 0.2s;
+      user-select: none;
+    }
+    .carousel-arrow:hover {
+      background: #d84b5a;
+      color: #fff;
+    }
+    .carousel-arrow.left {
+      left: 12px;
+    }
+    .carousel-arrow.right {
+      right: 12px;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 1.17rem;
+      border-top: 2px solid #22222220;
+      color: #2c2c2c;
+      font-family: "Cormorant Garamond", serif;
+      padding: 28px 64px 36px 64px;
+      background: none;
+    }
+    .card-footer .card-date,
+    .card-footer .card-valid {
+      font-size: 1.26em;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .card-footer .footer-note {
+      text-align: right;
+      font-size: 1.35em;
+      color: #d84b5a;
+      font-family: "Dancing Script", cursive;
+      margin-left: auto;
+    }
+    .nav-button {
+      position: fixed;
+      bottom: 44px;
+      border: none;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      border-radius: 1.7em;
+      padding: 18px 44px;
+      box-shadow: 0 2px 18px #c1adad33;
+      cursor: pointer;
+      left: 46px;
+      background: #9ec1e6;
+      color: #333;
+      z-index: 100;
+      transition: background 0.2s;
+    }
+    .nav-button:hover {
+      background: #7fa8ce;
+    }
+    .nav-button.next {
+      right: 46px;
+      left: auto;
+      background: #f7d9e6;
+      color: #333;
+    }
+    .nav-button.next:hover {
+      background: #f7b5cf;
+    }
+    @media (max-width: 900px) {
+      .outer-container {
+        padding: 0;
+      }
+      .card-container {
+        max-width: 99vw;
+      }
+      .card-header,
+      .card-footer {
+        padding: 5vw;
+      }
+      .card-image-section {
+        margin: 14px 2vw 0;
+      }
+      .nav-button,
+      .nav-button.next {
+        left: 12px;
+        right: 12px;
+      }
+      .card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }

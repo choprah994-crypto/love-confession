@@ -1,0 +1,196 @@
+body {
+      margin: 0;
+      background: #fbf5f4;
+      min-height: 100vh;
+      font-family: "Montserrat", sans-serif;
+      color: #2c2c2c;
+      transition: opacity 0.7s ease;
+      opacity: 1;
+    }
+    body.fadeout {
+      opacity: 0;
+    }
+    .outer-container {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fbf5f4;
+    }
+    .center-card-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      min-height: 100vh;
+    }
+    .thank-card {
+      position: relative;
+      background: linear-gradient(180deg, #fffdfa 0%, #fff7f7 100%);
+      border-radius: 54px;
+      box-shadow: 0 28px 110px #c1adad15;
+      border: 2.5px solid #f1dede;
+      max-width: 1200px;
+      width: 100%;
+      padding: 120px 100px 100px 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow: visible;
+      backdrop-filter: blur(3px);
+    }
+    .thank-top-row {
+      position: absolute;
+      top: 46px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      width: calc(100% - 160px);
+      justify-content: space-between;
+    }
+    .top-left-msg {
+      font-size: 1.65rem;
+      font-family: "Montserrat", sans-serif;
+      color: #333;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      opacity: 0.86;
+    }
+    .top-right-star {
+      color: #f19ac0;
+      font-size: 2.4rem;
+      font-weight: bold;
+      opacity: 0.4;
+      margin-left: auto;
+    }
+    .thank-headline {
+      font-family: "Playfair Display", serif;
+      color: #f19ac0;
+      font-size: 6.2rem;
+      font-style: italic;
+      font-weight: 500;
+      margin-bottom: 0;
+      margin-top: 88px;
+      line-height: 1.08;
+      letter-spacing: 0.01em;
+      z-index: 2;
+    }
+    .thank-sub {
+      font-family: "Montserrat", sans-serif;
+      font-size: 4.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #333;
+      letter-spacing: 0.01em;
+      margin: 38px 0 52px 0;
+      line-height: 1.14;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .sub-heart {
+      font-size: 3.3rem;
+      color: #f19ac0;
+      display: inline-block;
+      transform: translateY(-12px) rotate(-12deg);
+      margin-left: 12px;
+    }
+    .card-message {
+      font-family: "Montserrat", sans-serif;
+      color: #4b4b4b;
+      font-size: 1.89rem;
+      max-width: 790px;
+      margin: 0 auto 44px auto;
+      line-height: 1.84;
+    }
+    .card-message br {
+      margin-bottom: 14px;
+    }
+    .hello-kitty-img {
+      position: absolute;
+      right: 80px;
+      bottom: 60px;
+      width: 320px;
+      max-width: 36vw;
+      pointer-events: none;
+      user-select: none;
+      filter: drop-shadow(0 12px 32px #f19ac07c);
+      z-index: 5;
+    }
+    .thank-footnote {
+      font-family: "Dancing Script", cursive;
+      font-size: 1.65rem;
+      color: #2c2c2c;
+      margin: 62px auto 13px auto;
+      opacity: 0.84;
+      letter-spacing: 0.01em;
+    }
+    .thank-footnote .pink {
+      color: #f19ac0;
+      font-size: 1.36em;
+      vertical-align: middle;
+      margin: 0 7px;
+    }
+    .thank-footnote .shine {
+      color: #fcc82c;
+      font-size: 1.22em;
+      vertical-align: middle;
+      margin-left: 8px;
+      margin-right: -2px;
+    }
+    .back-btn {
+      position: absolute;
+      left: 55px;
+      bottom: 55px;
+      background: #f8dff0;
+      color: #555;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.44rem;
+      font-weight: 600;
+      border-radius: 32px;
+      padding: 23px 62px;
+      border: none;
+      box-shadow: 0 2px 20px #e7d8d280;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .back-btn:hover {
+      background: #f4c9e3;
+      color: #222;
+      box-shadow: 0 15px 44px #e7d8d2bb;
+    }
+    @media (max-width: 1100px) {
+      .thank-card {
+        max-width: 99vw;
+        padding: 38px 7vw 24px 7vw;
+      }
+      .thank-headline {
+        font-size: 2.8rem;
+        margin-top: 30px;
+      }
+      .thank-sub {
+        font-size: 1.6rem;
+        margin: 10px 0 22px 0;
+      }
+      .hello-kitty-img {
+        width: 110px;
+        right: 6px;
+        bottom: 6px;
+      }
+      .back-btn {
+        left: 10px;
+        bottom: 10px;
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+      .thank-top-row {
+        left: 14px;
+        top: 13px;
+        width: calc(100% - 28px);
+      }
+    }

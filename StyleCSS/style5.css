@@ -1,0 +1,247 @@
+ body {
+      background: #fbf5f4;
+      min-height: 100vh;
+      font-family: "Montserrat", sans-serif;
+      color: #2c2c2c;
+      margin: 0;
+      transition: opacity 0.7s ease;
+      opacity: 1;
+    }
+    body.fadeout {
+      opacity: 0;
+    }
+    .center-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: radial-gradient(circle at top left, #fff8f8 0%, #fde5eb 100%);
+      overflow: hidden;
+    }
+    .music-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 3px solid #e7d8d2;
+      box-shadow: 0 16px 56px #c1adad22;
+      border-radius: 56px;
+      max-width: 900px;
+      min-width: 480px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 90px 72px 86px 72px;
+      position: relative;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+    .music-title {
+      font-family: "Playfair Display", serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #d84b5a;
+      margin-bottom: 50px;
+      margin-top: 0;
+      letter-spacing: 0.02em;
+    }
+    .music-title .heart {
+      font-size: 2.2rem;
+      vertical-align: middle;
+      margin-left: 12px;
+      color: #d84b5a;
+    }
+    .avatar-shell {
+      width: 310px;
+      height: 310px;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px #d84b5a22;
+      border: 2px solid #d84b5a33;
+      background: #fff;
+      margin-bottom: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .avatar-shell img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 40px;
+      user-drag: none;
+      -webkit-user-drag: none;
+    }
+    .info-panel {
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 23px;
+      border: 2px solid #e7d8d2;
+      box-shadow: 0 2px 16px #d84b5a14 inset;
+      max-width: 420px;
+      width: 100%;
+      margin: 0 auto 50px auto;
+      padding: 24px 16px 18px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .status-text {
+      font-size: 1.2rem;
+      letter-spacing: 0.17em;
+      color: #d84b5a;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: "Montserrat", sans-serif;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+    .song-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #232323;
+      margin-bottom: 0;
+      margin-top: 0;
+      font-family: "Montserrat", serif;
+    }
+    .music-slider-section {
+      width: 100%;
+      max-width: 420px;
+      margin-bottom: 48px;
+    }
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.3rem;
+      color: #2c2c2c;
+      margin-bottom: 14px;
+      font-family: "Montserrat", sans-serif;
+    }
+    .slider-row {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    .music-range-slider {
+      width: 100%;
+      accent-color: #d84b5a;
+      height: 8px;
+      border-radius: 6px;
+      background: linear-gradient(
+        to right,
+        #d84b5a 0%,
+        #d84b5a 0%,
+        #f1e5e5 0%,
+        #f1e5e5 100%
+      );
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #d84b5a;
+      border: 3px solid #fff;
+      box-shadow: 0 0 7px #d84b5a55;
+      cursor: pointer;
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #d84b5a;
+      border: 3px solid #fff;
+      cursor: pointer;
+    }
+    input[type="range"]::-moz-range-track {
+      background: transparent;
+    }
+    .controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 44px;
+      margin-top: 32px;
+    }
+    .control-btn {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: 2px solid #d84b5a;
+      background: #fff;
+      color: #d84b5a;
+      font-size: 2.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 20px #d84b5a2c;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .control-btn:hover {
+      background: #d84b5a;
+      color: #fff;
+      box-shadow: 0 6px 28px #d84b5a46;
+    }
+    .control-btn.play {
+      background: linear-gradient(135deg, #d84b5a, #c03d4a);
+      color: #fff;
+      box-shadow: 0 8px 32px #d84b5a46;
+      border: 2px solid #a83545;
+      font-size: 2.7rem;
+      width: 104px;
+      height: 104px;
+      margin: 0 28px;
+      z-index: 2;
+    }
+    /* Popup floating nav buttons */
+    .nav-btn {
+      position: fixed;
+      bottom: 54px;
+      padding: 24px 54px;
+      border-radius: 2em;
+      font-size: 1.35rem;
+      font-family: "Montserrat", sans-serif;
+      box-shadow: 0 12px 40px #d84b5a55, 0 2px 12px #c1adad33;
+      border: none;
+      cursor: pointer;
+      z-index: 200;
+      font-weight: 700;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .nav-btn.back {
+      left: 70px;
+      background: #9ec1e6;
+      color: #333;
+    }
+    .nav-btn.next {
+      right: 70px;
+      left: auto;
+      background: #f7d9e6;
+      color: #333;
+    }
+    .nav-btn:hover {
+      background: #ffd9e6;
+      box-shadow: 0 18px 62px #d84b5a99;
+    }
+    @media (max-width: 900px) {
+      .center-container {
+        padding: 0;
+      }
+      .music-card {
+        max-width: 99vw;
+        padding: 15vw 3vw;
+      }
+      .nav-btn,
+      .nav-btn.next {
+        left: 10px;
+        right: 10px;
+        padding: 10px 24px;
+      }
+      .music-slider-section {
+        max-width: 98vw;
+      }
+    }
